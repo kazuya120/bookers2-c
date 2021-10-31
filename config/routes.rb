@@ -16,8 +16,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
     resource :relationships, only: [:create, :destroy]
+    get "book_count_search", to: "users#book_count_search"
   end
-  
+
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
 
